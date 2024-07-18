@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fallout RPG v2 Character Sheet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="no-change-color">Fallout RPG v2 Character Sheet</h1>
+        <div class="sheet-options">
+            <button onclick="toggleDarkMode()">Toggle Dark/Light Mode</button>
+            <button onclick="saveCharacter()">Save Character</button>
+            <button onclick="loadCharacter()">Load Character</button>
+            <button onclick="printSheet()">Print Sheet</button>
+            <button onclick="resetSheet()">Reset Sheet</button>
+            <label for="wildWasteland" class="no-change-color">Wild Wasteland:</label>
+            <input type="checkbox" id="wildWasteland" name="wildWasteland" onclick="toggleWildWasteland()">
+        </div>
+        
+        <!-- Character Info Section -->
+        <div class="section character-info">
+            <h2>Character Info</h2>
+            <div class="character-info-grid">
+                <div class="row">
+                    <div class="column">
+                        <label for="characterName">Character Name:</label>
+                        <input type="text" id="characterName" name="characterName" maxlength="20">
+                    </div>
+                    <div class="column">
+                        <label for="playerName">Player Name:</label>
+                        <input type="text" id="playerName" name="playerName" maxlength="20">
+                    </div>
+                    <div class="column">
+                        <label for="karmaCaps">Karma Caps:</label>
+                        <input type="text" id="karmaCaps" name="karmaCaps" value="1" readonly>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <label for="race">Race:</label>
+                        <select id="race" name="race" onchange="updateSubraceOptions()"></select>
+                    </div>
+                    <div class="column">
+                        <label for="subrace">Sub-race:</label>
+                        <select id="subrace" name="subrace"></select>
+                    </div>
+                    <div class="column">
+                        <label for="background">Background:</label>
+                        <select id="background" name="background"></select>
+                    </div>
+                    <div class="column">
+                        <label for="xp">XP:</label>
+                        <input type="text" id="xp" name="xp" oninput="checkLevelUp()">
+                    </div>
+                    <div class="column">
+                        <label for="level">Level:</label>
+                        <input type="text" id="level" name="level" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SPECIAL Stat Section -->
+        <div class="section special-section">
+            <h2>SPECIAL</h2>
+            <div class="special-stats">
+                <div class="stat">
+                    <label for="strength">Strength (STR):</label>
+                    <input type="text" id="strength" name="strength" value="5" readonly>
+                    <button onclick="increaseStat('strength')">+</button>
+                    <button onclick="decreaseStat('strength')">-</button>
+                    <input type="text" id="strengthModifier" name="strengthModifier" readonly>
+                </div>
+                <div class="stat">
+                    <label for="perception">Perception (PER):</label>
+                    <input type="text" id="perception" name="perception" value="5" readonly>
+                    <button onclick="increaseStat('perception')">+</button>
+                    <button onclick="decreaseStat('perception')">-</button>
+                    <input type="text" id="perceptionModifier" name="perceptionModifier" readonly>
+                </div>
+                <div class="stat">
+                    <label for="endurance">Endurance (END):</label>
+                    <input type="text" id="endurance" name="endurance" value="5" readonly>
+                    <button onclick="increaseStat('endurance')">+</button>
+                    <button onclick="decreaseStat('endurance')">-</button>
+                    <input type="text" id="enduranceModifier" name="enduranceModifier" readonly>
+                </div>
+                <div class="stat">
+                    <label for="charisma">Charisma (CHA):</label>
+                    <input type="text" id="charisma" name="charisma" value="5" readonly>
+                    <button onclick="increaseStat('charisma')">+</button>
+                    <button onclick="decreaseStat('charisma')">-</button>
+                    <input type="text" id="charismaModifier" name="charismaModifier" readonly>
+                </div>
+                <div class="stat">
+                    <label for="intelligence">Intelligence (INT):</label>
+                    <input type="text" id="intelligence" name="intelligence" value="5" readonly>
+                    <button onclick="increaseStat('intelligence')">+</button>
+                    <button onclick="decreaseStat('intelligence')">-</button>
+                    <input type="text" id="intelligenceModifier" name="intelligenceModifier" readonly>
+                </div>
+                <div class="stat">
+                    <label for="agility">Agility (AGI):</label>
+                    <input type="text" id="agility" name="agility" value="5" readonly>
+                    <button onclick="increaseStat('agility')">+</button>
+                    <button onclick="decreaseStat('agility')">-</button>
+                    <input type="text" id="agilityModifier" name="agilityModifier" readonly>
+                </div>
+                <div class="stat">
+                    <label for="luck">Luck (LUCK):</label>
+                    <input type="text" id="luck" name="luck" value="5" readonly>
+                    <button onclick="increaseStat('luck')">+</button>
+                    <button onclick="decreaseStat('luck')">-</button>
+                    <input type="text" id="luckModifier" name="luckModifier" readonly>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills and Status Section -->
+        <div class="split-section">
+            <div class="left-column">
+                <div class="section skills-section">
+                    <h2>Skills</h2>
+                    <div class="skills-grid">
+                        <div class="skill">
+                            <input type="checkbox" id="barterTagged" name="barterTagged" onclick="calculateSkills()">
+                            <label for="barter">Barter (CHA):</label>
+                            <input type="text" id="barter" name="barter" readonly>
+                        </div>
+                        <div class="skill">
+                            <input type="checkbox" id="breachTagged" name="breachTagged" onclick="calculateSkills()">
+                            <label for="breach">Breach (PER/INT):</label>
+                            <input type="text" id="breach" name="breach" readonly>
+                        </div>
+                        <div class="skill">
+                            <input type="checkbox" id="craftingTagged" name="craftingTagged" onclick="calculateSkills()">
+                            <label for="crafting">Crafting (INT):</label>
+                            <input type="text" id="crafting" name="crafting" readonly>
+                        </div>
+                        <div class="skill">
+                            <input type="checkbox" id="energyWeaponsTagged" name="energyWeaponsTagged" onclick="calculateSkills()">
+                            <label for="energyWeapons">Energy Weapons (PER):</label>
+                            <input type="text" id="energyWeapons" name="energyWeapons" readonly>
+                        </div>
+                        <div class="skill">
+                            <input type="checkbox" id="explosivesTagged" name="explosivesTagged" onclick="calculateSkills()">
+                            <label for="explosives">Explosives (PER):</label>
+                            <input type="text" id="explosives" name="explosives" readonly>
+                        </div>
+                        <div class="skill">
+                            <input type="checkbox" id="gunsTagged" name="gunsTagged" onclick="calculateSkills()">
+                            <label for="guns">Guns (AGI):</label>
+                            <input type="text" id="guns" name="guns" readonly>
+                        </div>
+                        <div class="skill">
+                            <input type="checkbox" id="intimidationTagged" name="intimidationTagged" onclick="calculateSkills()">
+                            <label for="intimidation">Intimidation (STR/CHA):</label>
+                            <input type="text" id="intimidation" name="intimidation" readonly>
+                        </div>
+                        <div class="skill">
+                            <input type="checkbox" id="medicineTagged" name="medicineTagged" onclick="calculateSkills()">
+                            <label for="medicine">Medicine (PER/INT):</label>
+                            <input type="text" id="medicine" name="medicine" readonly>
+                        </div>
+                        <div class="skill">
+                            <input type="checkbox" id="meleeWeaponsTagged" name="meleeWeaponsTagged" onclick="calculateSkills()">
+                            <label for="meleeWeapons">Melee Weapons (STR):</label>
+                            <input type="text" id="meleeWeapons" name="meleeWeapons" readonly>
+                        </div>
+                        <div class="skill">
+                            <input type="checkbox" id="scienceTagged" name="scienceTagged" onclick="calculateSkills()">
+                            <label for="science">Science (INT):</label>
+                            <input type="text" id="science" name="science" readonly>
+                        </div>
+                        <div class="skill">
+                            <input type="checkbox" id="sneakTagged" name="sneakTagged" onclick="calculateSkills()">
+                            <label for="sneak">Sneak (AGI):</label>
+                            <input type="text" id="sneak" name="sneak" readonly>
+                        </div>
+                        <div class="skill">
+                            <input type="checkbox" id="speechTagged" name="speechTagged" onclick="calculateSkills()">
+                            <label for="speech">Speech (CHA):</label>
+                            <input type="text" id="speech" name="speech" readonly>
+                        </div>
+                        <div class="skill">
+                            <input type="checkbox" id="survivalTagged" name="survivalTagged" onclick="calculateSkills()">
+                            <label for="survival">Survival (END):</label>
+                            <input type="text" id="survival" name="survival" readonly>
+                        </div>
+                        <div class="skill">
+                            <input type="checkbox" id="unarmedTagged" name="unarmedTagged" onclick="calculateSkills()">
+                            <label for="unarmed">Unarmed (STR):</label>
+                            <input type="text" id="unarmed" name="unarmed" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-column">
+                <div class="section status-section">
+                    <h2>Status and Condition</h2>
+                    <div class="status-grid">
+                        <div class="status-column">
+                            <div class="status">
+                                <label for="hunger">Levels of Hunger:</label>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="hunger1" name="hunger" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="hunger2" name="hunger" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="hunger3" name="hunger" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="hunger4" name="hunger" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="hunger5" name="hunger" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="hunger6" name="hunger" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="hunger7" name="hunger" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="hunger8" name="hunger" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="hunger9" name="hunger" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="hunger10" name="hunger" onclick="calculatePenalty()">
+                                </div>
+                            </div>
+                            <div class="status">
+                                <label for="dehydration">Levels of Dehydration:</label>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="dehydration1" name="dehydration" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="dehydration2" name="dehydration" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="dehydration3" name="dehydration" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="dehydration4" name="dehydration" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="dehydration5" name="dehydration" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="dehydration6" name="dehydration" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="dehydration7" name="dehydration" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="dehydration8" name="dehydration" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="dehydration9" name="dehydration" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="dehydration10" name="dehydration" onclick="calculatePenalty()">
+                                </div>
+                            </div>
+                            <div class="status">
+                                <label for="radiation">Levels of Radiation:</label>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="radiation1" name="radiation" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="radiation2" name="radiation" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="radiation3" name="radiation" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="radiation4" name="radiation" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="radiation5" name="radiation" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="radiation6" name="radiation" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="radiation7" name="radiation" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="radiation8" name="radiation" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="radiation9" name="radiation" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="radiation10" name="radiation" onclick="calculatePenalty()">
+                                </div>
+                            </div>
+                            <div class="status">
+                                <label for="penalty">Status Penalty:</label>
+                                <input type="text" id="penalty" name="penalty" readonly>
+                            </div>
+                        </div>
+                        <div class="status-column">
+                            <div class="status">
+                                <label for="exhaustion">Levels of Exhaustion:</label>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="exhaustion1" name="exhaustion" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="exhaustion2" name="exhaustion" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="exhaustion3" name="exhaustion" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="exhaustion4" name="exhaustion" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="exhaustion5" name="exhaustion" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="exhaustion6" name="exhaustion" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="exhaustion7" name="exhaustion" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="exhaustion8" name="exhaustion" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="exhaustion9" name="exhaustion" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="exhaustion10" name="exhaustion" onclick="calculatePenalty()">
+                                </div>
+                            </div>
+                            <div class="status">
+                                <label for="fatigue">Levels of Fatigue:</label>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="fatigue1" name="fatigue" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="fatigue2" name="fatigue" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="fatigue3" name="fatigue" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="fatigue4" name="fatigue" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="fatigue5" name="fatigue" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="fatigue6" name="fatigue" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="fatigue7" name="fatigue" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="fatigue8" name="fatigue" onclick="calculatePenalty()">
+                                    <input type="checkbox" id="fatigue9" name="fatigue" onclick="calculatePenalty()">
+                                </div>
+                            </div>
+                            <div class="status">
+                                <label for="currentConditions">Current Conditions:</label>
+                                <textarea id="currentConditions" name="currentConditions"></textarea>
+                            </div>
+                            <div class="status">
+                                <button onclick="addCondition()">Add Condition</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Passive Combat, Defense, and Weapons Section -->
+        <div class="split-section">
+            <div class="left-column">
+                <div class="section combat-passives-section">
+                    <h2>Passive & Combat</h2>
+                    <!-- Passive and combat layout here -->
+                </div>
+                <div class="section defense-section">
+                    <h2>Defense</h2>
+                    <!-- Defense layout here -->
+                </div>
+                <div class="section weapons-section">
+                    <h2>Weapons</h2>
+                    <!-- Weapons layout here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Traits and Perks, Inventory Section -->
+        <div class="split-section">
+            <div class="left-column">
+                <div class="section inventory-section">
+                    <h2>Inventory</h2>
+                    <!-- Inventory layout here -->
+                </div>
+            </div>
+            <div class="right-column">
+                <div class="section traits-section">
+                    <h2>Traits</h2>
+                    <!-- Traits layout here -->
+                </div>
+                <div class="section perks-section">
+                    <h2>Perks</h2>
+                    <!-- Perks layout here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

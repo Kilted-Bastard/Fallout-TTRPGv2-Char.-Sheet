@@ -1,0 +1,38 @@
+{
+    "Human": [
+        {
+            "name": "Resourceful",
+            "strength": 5,
+            "perception": 5,
+            "endurance": 5,
+            "charisma": 5,
+            "intelligence": 5,
+            "agility": 5,
+            "luck": 5,
+            "traits": [
+                {
+                    "name": "Resourceful",
+                    "description": "You gain one extra Karma Cap."
+                }
+            ]
+        }
+    ],
+    "Ghoul": [
+        {
+            "name": "Evolution",
+            "strength": 5,
+            "perception": 5,
+            "endurance": 5,
+            "charisma": 5,
+            "intelligence": 5,
+            "agility": 5,
+            "luck": 5,
+            "traits": [
+                {
+                    "name": "Evolution",
+                    "description": "You cannot gain levels of radiation and you are immune to radiation damage."
+                }
+            ]
+        }
+    ]
+}

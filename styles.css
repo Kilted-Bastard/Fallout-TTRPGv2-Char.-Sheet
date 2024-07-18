@@ -1,0 +1,221 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Sheet Options */
+.sheet-options {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.sheet-options button {
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.sheet-options label {
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.sheet-options input[type="checkbox"] {
+    transform: scale(1.5);
+    margin-left: 5px;
+}
+
+/* Section Styles */
+.section {
+    border: 2px solid #000;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.section h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 20px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #000;
+    padding-bottom: 5px;
+}
+
+/* Character Info Styles */
+.character-info-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.character-info-grid .row {
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.character-info-grid .column {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.character-info label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.character-info input,
+.character-info select {
+    width: calc(100% - 20px);
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* SPECIAL Stat Styles */
+.special-stats {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stat {
+    text-align: center;
+    flex: 1;
+    margin: 0 10px;
+}
+
+.stat label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.stat input {
+    width: 60px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.stat button {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Skills Section Styles */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.skill {
+    display: flex;
+    align-items: center;
+}
+
+.skill label {
+    margin-left: 5px;
+    flex: 1;
+}
+
+.skill input[type="text"] {
+    width: 50px;
+    text-align: center;
+    margin-left: 5px;
+}
+
+/* Status Section Styles */
+.status-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.status-column {
+    flex: 1;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.status label {
+    margin-right: 10px;
+    flex: 1;
+}
+
+.checkbox-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.checkbox-group input[type="checkbox"] {
+    transform: scale(1.2);
+}
+
+.status button {
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode .section {
+    background-color: #555;
+    border-color: #fff;
+}
+
+.no-change-color {
+    color: #000;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .split-section {
+        flex-direction: column;
+    }
+
+    .split-section .left-column,
+    .split-section .right-column {
+        margin: 0;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
