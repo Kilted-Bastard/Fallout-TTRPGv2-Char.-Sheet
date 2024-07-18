@@ -1,139 +1,89 @@
-/* General Styles */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #f4f4f4;
+    background-color: #f0f0f0;
     color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+    background-color: #333;
+    color: #f0f0f0;
 }
 
 .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 900px;
+    margin: auto;
     padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: background 0.3s, box-shadow 0.3s;
 }
 
-/* Header */
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
+.dark-mode .container {
+    background: #444;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
 }
 
-/* Sheet Options */
-.sheet-options {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-}
-
-.sheet-options button {
-    padding: 10px 20px;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.sheet-options label {
-    margin-left: 10px;
-    margin-right: 5px;
-}
-
-.sheet-options input[type="checkbox"] {
-    transform: scale(1.5);
-    margin-left: 5px;
-}
-
-/* Section Styles */
 .section {
-    border: 2px solid #000;
     margin-bottom: 20px;
-    padding: 20px;
-    background-color: #fff;
 }
 
 .section h2 {
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 20px;
-    text-transform: uppercase;
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid #333;
     padding-bottom: 5px;
+    margin-bottom: 10px;
+    transition: border-color 0.3s;
 }
 
-/* Character Info Styles */
-.character-info-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.dark-mode .section h2 {
+    border-color: #f0f0f0;
 }
 
-.character-info-grid .row {
-    display: flex;
+input[type="text"], select, textarea {
     width: 100%;
-    margin-bottom: 10px;
-}
-
-.character-info-grid .column {
-    flex: 1;
-    padding: 0 10px;
-}
-
-.character-info label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.character-info input,
-.character-info select {
-    width: calc(100% - 20px);
     padding: 5px;
-    margin-bottom: 10px;
-    border: 1px solid #000;
+    margin: 5px 0 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
 }
 
-/* SPECIAL Stat Styles */
-.special-stats {
+input[type="text"]:focus, select:focus, textarea:focus {
+    border-color: #555;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.dark-mode button {
+    background-color: #3a3a3a;
+}
+
+.dark-mode button:hover {
+    background-color: #2e2e2e;
+}
+
+.split-section {
     display: flex;
     justify-content: space-between;
 }
 
-.stat {
-    text-align: center;
-    flex: 1;
-    margin: 0 10px;
-}
-
-.stat label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 16px;
-    text-transform: uppercase;
-}
-
-.stat input {
-    width: 60px;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.stat button {
-    width: 30px;
-    height: 30px;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-/* Skills Section Styles */
-.skills-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+.left-column, .right-column {
+    width: 48%;
 }
 
 .skill {
@@ -141,81 +91,49 @@ h1 {
     align-items: center;
 }
 
-.skill label {
-    margin-left: 5px;
-    flex: 1;
-}
-
-.skill input[type="text"] {
-    width: 50px;
-    text-align: center;
-    margin-left: 5px;
-}
-
-/* Status Section Styles */
-.status-grid {
-    display: flex;
-    gap: 20px;
-}
-
-.status-column {
-    flex: 1;
-}
-
-.status {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.status label {
+.skill input[type="checkbox"] {
     margin-right: 10px;
+}
+
+.skill label {
     flex: 1;
 }
 
 .checkbox-group {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
+    flex-wrap: wrap;
 }
 
 .checkbox-group input[type="checkbox"] {
-    transform: scale(1.2);
+    margin-right: 5px;
 }
 
-.status button {
-    padding: 5px 10px;
-    font-size: 14px;
-    cursor: pointer;
+.status-column {
+    width: 48%;
 }
 
-/* Dark Mode */
-.dark-mode {
-    background-color: #333;
-    color: #fff;
+.traits-list, .perks-list {
+    list-style-type: none;
+    padding: 0;
 }
 
-.dark-mode .section {
+.trait, .perk {
+    background-color: #e0e0e0;
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.dark-mode .trait, .dark-mode .perk {
     background-color: #555;
-    border-color: #fff;
 }
 
 .no-change-color {
-    color: #000;
+    color: inherit;
 }
 
-/* Responsive Layout */
-@media (max-width: 768px) {
-    .split-section {
-        flex-direction: column;
-    }
-
-    .split-section .left-column,
-    .split-section .right-column {
-        margin: 0;
-    }
-
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
+.dynamic-content {
+    max-height: 200px;
+    overflow-y: auto;
 }

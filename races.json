@@ -1,38 +1,110 @@
 {
-    "Human": [
-        {
-            "name": "Resourceful",
-            "strength": 5,
-            "perception": 5,
-            "endurance": 5,
-            "charisma": 5,
-            "intelligence": 5,
-            "agility": 5,
-            "luck": 5,
-            "traits": [
-                {
-                    "name": "Resourceful",
-                    "description": "You gain one extra Karma Cap."
-                }
-            ]
-        }
+  "Human": {
+    "traits": [],
+    "subraces": {
+      "Human (Variant)": {
+        "traits": [
+          {"name": "Resourceful", "description": "You gain one extra Karma Cap that you can use each game."},
+          {"name": "Unexposed", "description": "You have disadvantage on all Radiation and Addiction checks."}
+        ]
+      },
+      "Gen 3 Synth": {
+        "traits": []
+      },
+      "Gen 3 Synth (Variant)": {
+        "traits": [
+          {"name": "Resourceful", "description": "You gain one extra Karma Cap that you can use each game."},
+          {"name": "Unexposed", "description": "You have disadvantage on all Radiation and Addiction checks."}
+        ]
+      }
+    }
+  },
+  "Ghoul": {
+    "traits": [
+      {"name": "Evolution", "description": "You cannot gain levels of radiation and you are immune to radiation damage. Additionally, you gain no Irradiated levels from consuming food or water."},
+      {"name": "Resilient Anatomy", "description": "You are resistant to poison damage. Any stamina points you would gain from consuming food, drinks, or chems is halved (rounded down). Any hit points you would gain from stimpaks is halved (rounded down). You cannot gain hit points from healing powder. Syringes that aren’t ‘loaders’ have no effect on you. Additionally, whenever you suffer damage from bleeding, you take half as much."}
     ],
-    "Ghoul": [
-        {
-            "name": "Evolution",
-            "strength": 5,
-            "perception": 5,
-            "endurance": 5,
-            "charisma": 5,
-            "intelligence": 5,
-            "agility": 5,
-            "luck": 5,
-            "traits": [
-                {
-                    "name": "Evolution",
-                    "description": "You cannot gain levels of radiation and you are immune to radiation damage."
-                }
-            ]
-        }
-    ]
+    "subraces": {
+      "Ghoul (Variant)": {
+        "traits": [
+          {"name": "Many Roads Walked", "description": "You gain a +2 in all skills and you gain an extra perk at 1st Level."},
+          {"name": "Old Bones", "description": "You are immune to poison damage and you gain the Stitched Together perk."},
+          {"name": "Half Life", "description": "Your mind slips each day, ghoulification has taken an immense toll on you and you feel yourself slowly becoming feral. When you reach Level 15, you are fully consumed by ghoulification, your mind is no longer your own, and your character is controlled by the GM."}
+        ]
+      }
+    }
+  },
+  "Gen-2 Synth": {
+    "traits": [
+      {"name": "Inorganic Body", "description": "You are immune to radiation and poison. You gain no effects from chems, drinks, or food. Additionally, you have no need to breathe, sleep, eat, or drink."}
+    ],
+    "subraces": {
+      "Gen-2 Synth (Variant)": {
+        "traits": [
+          {"name": "Brittle Body", "description": "Whenever a creature makes a targeted attack against you, you gain two limb conditions instead of one. Additionally, you are vulnerable to electricity damage."},
+          {"name": "Software and Hardware Upgrades", "description": "Whenever you gain a perk, you are considered a robot for perk requirements."},
+          {"name": "Artificial Intelligence Algorithms", "description": "Whenever you gain skill points, you gain one more."}
+        ]
+      }
+    }
+  },
+  "Robot": {
+    "traits": [
+      {"name": "Severed Limbs", "description": "Luckily for most robots, reattaching limbs is commonplace when they break or fall off. If any of your limbs are severed, you do not go into shock and they can be reattached with 3 steel and 1 circuitry junk item. When you or a creature attaches a limb, it takes a number of minutes equal to 10 - their or your crafting skill bonus. If the amount of time is reduced to 0, it takes 6 AP to reattach the limb instead."},
+      {"name": "Armor and Weapons", "description": "You can use armor and weapons just as any other race would. If your robot sub-type grants you a weapon, you can upgrade and modify this weapon just like any other weapon. However, you cannot use power armor."}
+    ],
+    "subraces": {
+      "Mr. Handy": {
+        "traits": [
+          {"name": "Handy Body", "description": "Handy’s have a less human shape to them than other robots, floating off the ground with three appendages and three eyes attached to a large round core. You have three arms, three eyes, and can have up to three hands if you choose to have three Grippers in the Incredible Multi-Talented Appliance section below. You do not have a head, groin, or legs that can be targeted by targeted attacks or severed. Instead; targeted attacks to your eyes cost 2 less AP and creatures can target your jet engine. The jet engine functions exactly the same as a targeted attack to the legs, except the attack costs 2 more AP. If your jet engine is severed, you fall prone and cannot move until it is reattached."},
+          {"name": "Fuel", "description": "You require fuel to continue to operate. Every week, 7 days, or 168 hours; you can spend 6 AP to fill your tank with a gallon of fuel or six oil junk items which are consumed upon use. If you fail to consume a gallon of fuel after the week, you must succeed a DC 12 Endurance check for each hour past 168. For each successful check, the DC increases by 2. On a fail, you become unconscious until another creature fills your tank with fuel. Alternatively, you can load a fusion core into your chassis. If you do, you can operate for 30 days without requiring fuel."},
+          {"name": "Jet Engine", "description": "You hover a few feet off the ground while active and moving. You don't trigger any floor-based traps or activated effects. However, if you are knocked prone, become stunned, or fall unconscious; you fall to the ground."},
+          {"name": "Incredible Multi-Talented Appliance", "description": "Handy’s are built with three special tools that are attached and built into three of their arms. These tools and weapons can be modified like any other weapon, only require one hand to use, and do not cost AP to equip or stow. Additionally, they cannot be detached from you unless the arm that the tool or weapon is attached to is severed."}
+        ]
+      },
+      "Mrs. Handy": {
+        "traits": [
+          {"name": "Handy Body", "description": "Handy’s have a less human shape to them than other robots, floating off the ground with three appendages and three eyes attached to a large round core. You have three arms, three eyes, and can have up to three hands if you choose to have three Grippers in the Incredible Multi-Talented Appliance section below. You do not have a head, groin, or legs that can be targeted by targeted attacks or severed. Instead; targeted attacks to your eyes cost 2 less AP and creatures can target your jet engine. The jet engine functions exactly the same as a targeted attack to the legs, except the attack costs 2 more AP. If your jet engine is severed, you fall prone and cannot move until it is reattached."},
+          {"name": "Fuel", "description": "You require fuel to continue to operate. Every week, 7 days, or 168 hours; you can spend 6 AP to fill your tank with a gallon of fuel or six oil junk items which are consumed upon use. If you fail to consume a gallon of fuel after the week, you must succeed a DC 12 Endurance check for each hour past 168. For each successful check, the DC increases by 2. On a fail, you become unconscious until another creature fills your tank with fuel. Alternatively, you can load a fusion core into your chassis. If you do, you can operate for 30 days without requiring fuel."},
+          {"name": "Jet Engine", "description": "You hover a few feet off the ground while active and moving. You don't trigger any floor-based traps or activated effects. However, if you are knocked prone, become stunned, or fall unconscious; you fall to the ground."},
+          {"name": "Incredible Multi-Talented Appliance", "description": "Handy’s are built with three special tools that are attached and built into three of their arms. These tools and weapons can be modified like any other weapon, only require one hand to use, and do not cost AP to equip or stow. Additionally, they cannot be detached from you unless the arm that the tool or weapon is attached to is severed."}
+        ]
+      },
+      "Protectron": {
+        "traits": [
+          {"name": "Protectron Body", "description": "You have two arms, two legs, two hands, two feet, a head, and a torso. However, you do not have eyes or a groin that can be targeted by normal targeted attacks or severed."},
+          {"name": "Reinforced Plating", "description": "Your DT increases by 1 even if you aren’t wearing armor."},
+          {"name": "Slow", "description": "Protectrons can only spend a maximum of 6 AP on movement during their turns."},
+          {"name": "Protect and Serve", "description": "Protectrons are built with a special tool that is attached and built into one of their arms. These tools and weapons can be modified like any other weapon, only require one hand to use, and do not cost AP to equip or stow. Additionally, they cannot be detached from you unless the arm that the tool or weapon is attached to is severed."}
+        ]
+      },
+      "Robobrain": {
+        "traits": [
+          {"name": "Robobrain Body", "description": "Robobrains have a humanoid shape and appendages. You have two arms, two hands, a head, and a torso. However, you do not have legs, feet, eyes, or a groin that can be targeted by normal targeted attacks or severed. Instead, creatures can target your all-terrain rollers. The rollers function exactly the same as a targeted attack to the legs except they cannot be severed."},
+          {"name": "All Terrain Rollers", "description": "You do not have to spend extra AP to move through difficult terrain."},
+          {"name": "NeuroTransmitters", "description": "You are vulnerable to electricity damage. Additionally, when you take damage from a targeted attack to the head; you gain two conditions instead of one."}
+        ]
+      }
+    }
+  },
+  "Super Mutant": {
+    "traits": [
+      {"name": "Evolution", "description": "You cannot gain levels of radiation and you are immune to radiation damage. Additionally, you gain no Irradiated levels from consuming food or water."},
+      {"name": "Superior Strength", "description": "Due to your increased mass in muscle, your Strength score increases by 1 and cannot be lower than 6. Additionally, your Carry Load is increased by 40."},
+      {"name": "Mass Exertion", "description": "The amount of required food and water you need each day without gaining levels of hunger and dehydration is doubled."},
+      {"name": "Bulky", "description": "Super mutants have many advantages, but precision does not come easy; whenever your weapons or armor would gain a level of decay, they gain an additional one."}
+    ],
+    "subraces": {
+      "Super Mutant (Variant)": {
+        "traits": [
+          {"name": "Defective Strain", "description": "Due to the various types of experimentation performed on many humans, when you became a Super mutant, your body was empowered, but your mind weakened. Your Strength and Endurance ability scores both increase by 2 and your Carry Load is increased by 40. However, your Intelligence ability score is reduced by 2 and cannot be raised higher than a 3."}
+        ]
+      },
+      "Nightkin": {
+        "traits": [
+          {"name": "Stealth Field", "description": "You can spend 3 action points on your turn to turn you and everything you are carrying invisible. This ability lasts for 1 minute. Each time you use this ability after the first use each day, your Perception ability score temporarily decreases by 1 for 24 hours (to a minimum of 1). Your Perception ability score being decreased in this way does not limit you in using or choosing perks that have a Perception ability score requirement."}
+        ]
+      }
+    }
+  }
 }

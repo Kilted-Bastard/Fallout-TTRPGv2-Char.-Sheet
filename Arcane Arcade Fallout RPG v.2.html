@@ -18,7 +18,7 @@
             <label for="wildWasteland" class="no-change-color">Wild Wasteland:</label>
             <input type="checkbox" id="wildWasteland" name="wildWasteland" onclick="toggleWildWasteland()">
         </div>
-        
+
         <!-- Character Info Section -->
         <div class="section character-info">
             <h2>Character Info</h2>
@@ -40,7 +40,7 @@
                 <div class="row">
                     <div class="column">
                         <label for="race">Race:</label>
-                        <select id="race" name="race" onchange="updateSubraceOptions()"></select>
+                        <select id="race" name="race"></select>
                     </div>
                     <div class="column">
                         <label for="subrace">Sub-race:</label>
@@ -324,7 +324,7 @@
             <div class="right-column">
                 <div class="section traits-section">
                     <h2>Traits</h2>
-                    <!-- Traits layout here -->
+                    <ul id="traitsList" class="traits-list"></ul>
                 </div>
                 <div class="section perks-section">
                     <h2>Perks</h2>

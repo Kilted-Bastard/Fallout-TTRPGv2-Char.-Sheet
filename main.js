@@ -200,63 +200,6 @@ function getBaseSkillValue(skill) {
     }
 }
 
-// Get Skills Data
-function getSkillsData() {
-    const skills = [
-        'barter', 'breach', 'crafting', 'energyWeapons', 'explosives', 'guns',
-        'intimidation', 'medicine', 'meleeWeapons', 'science', 'sneak', 'speech',
-        'survival', 'unarmed'
-    ];
-    const skillsData = {};
-    skills.forEach(skill => {
-        skillsData[skill] = {
-            tagged: document.getElementById(skill + 'Tagged').checked,
-            value: document.getElementById(skill).value
-        };
-    });
-    return skillsData;
-}
-
-// Set Skills Data
-function setSkillsData(skillsData) {
-    Object.keys(skillsData).forEach(skill => {
-        document.getElementById(skill + 'Tagged').checked = skillsData[skill].tagged;
-        document.getElementById(skill).value = skillsData[skill].value;
-    });
-}
-
-// Get Status Data
-function getStatusData() {
-    const statuses = ['hunger', 'dehydration', 'exhaustion', 'radiation', 'fatigue'];
-    const statusData = {};
-    statuses.forEach(status => {
-        const statusChecks = [];
-        for (let i = 1; i <= 10; i++) {
-            if (status !== 'fatigue' || (status === 'fatigue' && i <= 9)) {
-                statusChecks.push(document.getElementById(status + i).checked);
-            }
-        }
-        statusData[status] = statusChecks;
-    });
-    statusData.currentConditions = document.getElementById('currentConditions').value;
-    return statusData;
-}
-
-// Set Status Data
-function setStatusData(statusData) {
-    Object.keys(statusData).forEach(status => {
-        if (status !== 'currentConditions') {
-            statusData[status].forEach((checked, index) => {
-                if (status !== 'fatigue' || (status === 'fatigue' && index <= 8)) {
-                    document.getElementById(status + (index + 1)).checked = checked;
-                }
-            });
-        } else {
-            document.getElementById('currentConditions').value = statusData[status];
-        }
-    });
-}
-
 // Calculate Status Penalty
 function calculatePenalty() {
     const statuses = ['hunger', 'dehydration', 'exhaustion', 'radiation', 'fatigue'];
@@ -265,7 +208,7 @@ function calculatePenalty() {
         for (let i = 1; i <= 10; i++) {
             if (status !== 'fatigue' || (status === 'fatigue' && i <= 9)) {
                 if (document.getElementById(status + i).checked) {
-                    penalty -= 1;
+                    penalty--;
                 }
             }
         }
@@ -273,88 +216,127 @@ function calculatePenalty() {
     document.getElementById('penalty').value = penalty;
 }
 
-// Add Condition
-function addCondition() {
-    const condition = prompt('Enter the condition description:');
-    if (condition) {
-        const currentConditions = document.getElementById('currentConditions');
-        currentConditions.value += (currentConditions.value ? '\n' : '') + condition;
-    }
-}
+// Fetch and populate race and subrace options
+async function fetchAndPopulateRaceData() {
+    try {
+        const response = await fetch('races.json');
+        const raceData = await response.json();
 
-// Populate Subrace Dropdown
-function populateSubraceDropdown(race) {
-    const subraceSelect = document.getElementById('subrace');
-    subraceSelect.innerHTML = '';
-    const subraces = raceData[race] || [];
-    console.log('Subraces for', race, ':', subraces); // Debug output
-    subraces.forEach(subrace => {
-        const option = document.createElement('option');
-        option.value = subrace.name;
-        option.textContent = subrace.name;
-        subraceSelect.appendChild(option);
-    });
-}
+        const raceSelect = document.getElementById('race');
+        const subraceSelect = document.getElementById('subrace');
+        raceSelect.innerHTML = '<option value="">Select Race</option>';
+        subraceSelect.innerHTML = '<option value="">Select Sub-race</option>';
 
-// Update Race Modifiers
-function updateRaceModifiers(race, subrace) {
-    const raceInfo = raceData[race].find(sub => sub.name === subrace);
-    if (raceInfo) {
-        const stats = ['strength', 'perception', 'endurance', 'charisma', 'intelligence', 'agility', 'luck'];
-        stats.forEach(stat => {
-            if (raceInfo[stat]) {
-                document.getElementById(stat).value = raceInfo[stat];
-            }
+        Object.keys(raceData).forEach(race => {
+            const option = document.createElement('option');
+            option.value = race;
+            option.textContent = race;
+            raceSelect.appendChild(option);
         });
 
-        const traitsSection = document.getElementById('traits');
-        traitsSection.innerHTML = '';
-        if (raceInfo.traits) {
-            raceInfo.traits.forEach(trait => {
-                const traitElement = document.createElement('div');
-                traitElement.textContent = `${trait.name}: ${trait.description}`;
-                traitsSection.appendChild(traitElement);
-            });
-        }
+        raceSelect.addEventListener('change', () => {
+            const selectedRace = raceSelect.value;
+            subraceSelect.innerHTML = '<option value="">Select Sub-race</option>';
+            if (selectedRace && raceData[selectedRace].subraces) {
+                raceData[selectedRace].subraces.forEach(subrace => {
+                    const option = document.createElement('option');
+                    option.value = subrace.name;
+                    option.textContent = subrace.name;
+                    subraceSelect.appendChild(option);
+                });
+            }
+            updateTraits();
+        });
+
+        subraceSelect.addEventListener('change', updateTraits);
+    } catch (error) {
+        console.error('Error fetching race data:', error);
     }
 }
 
-// Initialize the page with default values and event listeners
-document.addEventListener('DOMContentLoaded', () => {
+// Update traits based on selected race and subrace
+function updateTraits() {
+    const raceSelect = document.getElementById('race');
+    const subraceSelect = document.getElementById('subrace');
+    const selectedRace = raceSelect.value;
+    const selectedSubrace = subraceSelect.value;
+
+    const traitsContainer = document.querySelector('.traits-section .traits-list');
+    traitsContainer.innerHTML = '';
+
     fetch('races.json')
         .then(response => response.json())
-        .then(data => {
-            window.raceData = data;
-            console.log('Race data fetched:', data); // Debug output
-            const races = Object.keys(data);
-            const raceSelect = document.getElementById('race');
-            races.forEach(race => {
-                const option = document.createElement('option');
-                option.value = race;
-                option.textContent = race;
-                raceSelect.appendChild(option);
-            });
-            populateSubraceDropdown(raceSelect.value);
+        .then(raceData => {
+            if (selectedRace && raceData[selectedRace]) {
+                const raceTraits = raceData[selectedRace].traits || [];
+                raceTraits.forEach(trait => {
+                    const traitElement = document.createElement('div');
+                    traitElement.classList.add('trait');
+                    traitElement.textContent = trait;
+                    traitsContainer.appendChild(traitElement);
+                });
+
+                if (selectedSubrace && raceData[selectedRace].subraces) {
+                    const subrace = raceData[selectedRace].subraces.find(sub => sub.name === selectedSubrace);
+                    if (subrace) {
+                        const subraceTraits = subrace.traits || [];
+                        subraceTraits.forEach(trait => {
+                            const traitElement = document.createElement('div');
+                            traitElement.classList.add('trait');
+                            traitElement.textContent = trait;
+                            traitsContainer.appendChild(traitElement);
+                        });
+                    }
+                }
+            }
         })
-        .catch(error => console.error('Error fetching race data:', error));
+        .catch(error => console.error('Error updating traits:', error));
+}
 
-    const backgrounds = ['Wastelander', 'Vault Dweller', 'Raider', 'Merchant', 'Scientist'];
-    const backgroundSelect = document.getElementById('background');
-    backgrounds.forEach(background => {
-        const option = document.createElement('option');
-        option.value = background;
-        option.textContent = background;
-        backgroundSelect.appendChild(option);
+// Fetch race data on page load
+window.onload = fetchAndPopulateRaceData;
+
+// Get skills data for saving
+function getSkillsData() {
+    const skills = [
+        'barter', 'breach', 'crafting', 'energyWeapons', 'explosives', 'guns',
+        'intimidation', 'medicine', 'meleeWeapons', 'science', 'sneak', 'speech',
+        'survival', 'unarmed'
+    ];
+    return skills.map(skill => ({
+        name: skill,
+        tagged: document.getElementById(skill + 'Tagged').checked,
+        value: document.getElementById(skill).value
+    }));
+}
+
+// Set skills data for loading
+function setSkillsData(skills) {
+    skills.forEach(skill => {
+        document.getElementById(skill.name + 'Tagged').checked = skill.tagged;
+        document.getElementById(skill.name).value = skill.value;
     });
+}
 
-    document.getElementById('race').addEventListener('change', (event) => {
-        populateSubraceDropdown(event.target.value);
-        updateRaceModifiers(event.target.value, document.getElementById('subrace').value);
+// Get status data for saving
+function getStatusData() {
+    const statuses = ['hunger', 'dehydration', 'exhaustion', 'radiation', 'fatigue'];
+    return statuses.reduce((acc, status) => {
+        acc[status] = [];
+        for (let i = 1; i <= 10; i++) {
+            if (status !== 'fatigue' || (status === 'fatigue' && i <= 9)) {
+                acc[status].push(document.getElementById(status + i).checked);
+            }
+        }
+        return acc;
+    }, {});
+}
+
+// Set status data for loading
+function setStatusData(statusData) {
+    Object.keys(statusData).forEach(status => {
+        statusData[status].forEach((checked, index) => {
+            document.getElementById(status + (index + 1)).checked = checked;
+        });
     });
-
-    document.getElementById('subrace').addEventListener('change', (event) => {
-        updateRaceModifiers(document.getElementById('race').value, event.target.value);
-    });
-
-    calculateModifiers();
-});
+}
