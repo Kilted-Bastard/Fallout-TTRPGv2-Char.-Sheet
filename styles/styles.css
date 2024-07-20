@@ -1,0 +1,112 @@
+/* Basic styles and layout */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #444;
+}
+
+h1.no-change-color, h2.no-change-color {
+    color: inherit;
+}
+
+.sheet-options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.section {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+.character-info-grid, .special-stats, .skills-grid, .status-grid {
+    display: grid;
+    gap: 10px;
+}
+
+.character-info-grid .row, .special-stats.horizontal {
+    display: flex;
+    justify-content: space-between;
+}
+
+.character-info-grid .column, .special-stats .stat, .skills-grid .skill, .status-grid .status-column .status, .status-grid .checkbox-group, .traits-section ul {
+    flex: 1;
+}
+
+.character-info-grid .column input, .special-stats .stat input[type="text"], .skills-grid .skill input[type="text"], .status-grid .status input[type="text"], .status-grid .status textarea, .traits-section ul li {
+    width: 100%;
+}
+
+.split-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.split-section .left-column, .split-section .right-column {
+    flex: 1;
+}
+
+/* Dark mode */
+body.dark-mode {
+    background-color: #222;
+    color: #eee;
+}
+
+body.dark-mode .container {
+    background-color: #333;
+}
+
+body.dark-mode .section {
+    background-color: #444;
+    border-color: #555;
+}
+
+body.dark-mode .sheet-options button, body.dark-mode .sheet-options input, body.dark-mode .sheet-options label.no-change-color {
+    background-color: #555;
+    color: #eee;
+}
+
+body.dark-mode .character-info-grid input, body.dark-mode .special-stats input[type="text"], body.dark-mode .skills-grid input[type="text"], body.dark-mode .status-grid input[type="text"], body.dark-mode .status-grid textarea, body.dark-mode .traits-section ul li {
+    background-color: #555;
+    color: #eee;
+    border-color: #666;
+}
+
+/* Printing */
+@media print {
+    body {
+        background-color: #fff;
+        color: #000;
+    }
+
+    .container {
+        background-color: #fff;
+        color: #000;
+    }
+
+    .section {
+        background-color: #fff;
+        color: #000;
+    }
+
+    .sheet-options {
+        display: none;
+    }
+}

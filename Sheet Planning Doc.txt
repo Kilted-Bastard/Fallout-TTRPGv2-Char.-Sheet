@@ -1,0 +1,160 @@
+Sheet Options: 
+Toggle Dark/Light Mode [button]
+Save Character [button]
+Load Character [button]
+Print Sheet [Button]
+Wild Wasteland [Toggle]
+
+Character Info Section:
+Section Title Character Info
+Character Name:[Text Box Limit to 20 Characters]
+Player Name: [Text Box Limit to 20 Characters]
+Background: [Dropdown Menu - References background.json]
+Race: [Dropdown Menu - Refences race.json]
+Level:[Dynamic - increases every 1000 XP, Will include reference chart]
+XP:[Text Box]
+Karma Caps [Defalut:1 Dynamic only way to increase this is by perks and traits no player input]
+
+SPECIAL Stat Section:
+Title: SPECIAL
+Format: [Stat Default 5] [Increase decrease buttons] [Modifier (Stat -5)]
+Stats: 
+Strength (abbreviation: STR)
+Perception (abbreviation: PER) 
+Endurance (abbreviation: END) 
+Charisma (abbreviation: CHA) 
+Intelligence (abbreviation: INT) 
+Agility (abbreviation: AGI) 
+Luck (abbreviation: LUCK) 
+
+Skills Section:
+Format:
+[Check Box] [Skill name] [Skill Special Stat If a skill has 2 Special stats, it is either or] [skill modifier]
+Skill Modifier Formula
+
+Modifier = [SPECIAL Modifier] + [Skill Points spent on skill] + [If skill is tagged +2 if not +0] + [Luck Modifier/2 (rounded Down)]+[Skill Adjustments: Default 0]
+
+Multiple Special Stats
+if multiple special stars are used, the format will look like this
+[Check Box] [Skill name] [Special stat 1/Special Stat 2] [skill modifier 1/ skill modifier 2]
+
+Players can only spend skill points on level-ups. However, GMs may want to adjust them, so next to each stat, let's add an adjust button
+if a player hovers over the modifier with the mouse, a detailed breakdown of the bonuses appears and disappears when the mouse is not present
+Skills:
+
+Barter [CHA]
+Breach [PER or INT]
+Crafting [INT]
+Energy Weapons [PER]
+Explosives [PER]
+Guns [AGI]
+Intimidation [STR or CHA]
+Medicine [PER or INT]
+Melee Weapons [STR]
+Science [INT]
+Sneak [AGI]
+Speech [CHA]
+Survival [END]
+Unarmed [STR]
+
+Status and Condition Section
+
+Format:
+Level of [Status] [10 check boxes]
+
+Statuses:
+Hunger
+Dehydration
+Exhaustion
+Radiation
+Fatigue [Only has nine boxes]
+
+Status Penalty for every check box selected in hunger, dehydration, exhaustion, Fatigue and radiation add to the penalty (showed as a negative number) 
+
+Conditions:
+Default blank
+[add Condition button - references conditions for list of conditions, and applies modifiers]
+
+Format:
+Condition: Description
+
+
+Defense Section:
+Section Title: Defense
+AC [Number input max 2 digits]
+DT [Number Input Max 2 Digits]
+Radiation DC [Number Input Max 3 digits]
+Armor Type [Dropdown Menu with armor Types- References armor.json]
+Levels of Decay [ten check boxes]
+[Decay penalty: its AC and DT bonus
+are each decreased by a number equal to half the amount
+of levels of decay, it has rounded down. Note: Your AC
+cannot be lower than 10 from levels of decay, nor can your
+DT be lower than 0.] This stat does not show but automatically adjusts AC and DT
+Armor Upgrades:
+Default Blank
+Button: Add Upgrade [Pulls list from armor.json] The number of armor upgrades is limited by armor type; once the max number of upgrades is reached, the player can not add any more.
+
+Passive & Combat stats
+
+Section Title Passive & Combat
+
+Stamina Points: [Default: AGI Modifier + 10 (Increases during Level up)
+Hit-Point [Default:10+END Modifier (Increases during Level up]
+Healing Rate [Half of (END Modifier + Level)]
+Combat Sequence [Dynamic(No player input): equals Perception Modifier + bonuses given by perks or traits Default 0]
+Action Points [10 + AGI Modifier][buttons next to it to increase and decrease][Reset button- sets it to default] Number cannot exceed 15
+Passive Sense [12+PER Modifier]
+Party Nerve [Text box no larger than 2 digits]
+Group Sneak [Text box no larger than 2 digits]
+
+Weapon Section:
+Sections Title: Weapons
+
+Each Weapon has the following stats:
+
+Weapon Name(Can be given a unique name by the Player)
+Weapon type: [Official Weapon name weapon.json cannot be changed]
+AP: [Dynamic referenced from weapon.json]
+Attack:[Dynamic referenced from weapon.json]
+Damage:[Dynamic referenced from weapon.json]
+Range:[Dynamic referenced from weapon.json]
+Crit:[Dynamic referenced from weapon.json]
+Special Properties:[Dynamic referenced from weapon.json]
+Ammo:[Dynamic referenced from weapon.json]
+Mods: [Default none] [button Add Mod: References weapon.json for list of mods] (Shows mod name in box if clicked a box appears with mod name and description)]
+Level of Decay: [10 Check boxes]
+
+Traits Section:
+Section Title Traits
+Default Blank
+[Button Adds Trait] [Refrences list of traits from traits.json] Once selected, traits will apply any modification to the player's character. If wild wasteland is selected, it will apply the wild wasteland modifiers] [max traits a player can have is 2]. 
+
+When a trait is applied, the trait will be listed in this section 
+Format:
+[Trait Title]: [Description]
+
+Perks Section:
+Section Title: Perks
+Default Blank
+[Add Perk] [Refrences list of Perks from Perks.json]Once selected, the perk will apply any modification to the player's character.
+
+When a Perk is applied, the trait will be listed in this section 
+Format:
+[Perk Title]: [Description]
+Perks can be gained during level-up
+
+Inventory Section:
+Title Inventory
+
+Caps: [Numerical input max 7 Digits]
+Carry Load: [Default: STR X 10 ]
+Current Load [SUM Load of entire inventory]
+
+Inventory: [Dynamic spreadsheet with the following Columns: Item,  Quantity, Load, Actions]
+
+Actions [Delete Item}
+Invisible stat Total Item Load [Quantity * Load] used for current load stat
+
+
+

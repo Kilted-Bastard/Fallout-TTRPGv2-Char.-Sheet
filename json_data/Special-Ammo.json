@@ -1,0 +1,274 @@
+[
+    {
+        "Name":"Armor Piercing",
+        "Type":"Guns",
+        "Effect":"If the weapon\u2019s damage is dealt to a creature\u2019s hit points, it ignores up to 8 points of DT and the creature\u2019s armor gains a level of decay.",
+        "Weight":"Varies",
+        "Cost per Round":"x3",
+        "Ammo Type":".308, .50, 5.56mm, 5mm"
+    },
+    {
+        "Name":"Bean Bag",
+        "Type":"Guns",
+        "Effect":"The weapon\u2019s damage is instead 1d4+1 and you do not add your agility modifier, if this damage dealt to a target creature\u2019s hit points, they take one level of fatigue. Additionally, if a bean bag shot brings a creature to 0 hit points, they automatically heal 1 point unless the attack was a targeted attack to the head or eyes.",
+        "Weight":"Varies",
+        "Cost per Round":"-50%",
+        "Ammo Type":"12 gauge"
+    },
+    {
+        "Name":"Buck",
+        "Type":"Guns",
+        "Effect":"The weapon\u2019s range modifiers are both increased by 4 and it loses its spread property.",
+        "Weight":"Varies",
+        "Cost per Round":"-25%",
+        "Ammo Type":"12 gauge, 20 gauge"
+    },
+    {
+        "Name":"Buck Magnum",
+        "Type":"Guns",
+        "Effect":"The weapon\u2019s damage is increased by 3, ignores 3 points of DT, and its range modifiers are each increased by 4. However, the weapon loses its Spread property and after every second attack; the weapon gains a level of decay.",
+        "Weight":"Varies",
+        "Cost per Round":"x3",
+        "Ammo Type":"12 gauge, 20 gauge"
+    },
+    {
+        "Name":"Cap shot",
+        "Type":"Guns",
+        "Effect":"The weapon gains the Destructive and Mangle properties. The weapon\u2019s damage ignores 2 points of DT.",
+        "Weight":"Varies",
+        "Cost per Round":"x4",
+        "Ammo Type":"12 gauge"
+    },
+    {
+        "Name":"Dragon\u2019s Breath",
+        "Type":"Guns",
+        "Effect":"The weapon deals half as much damage but gains Incendiary.",
+        "Weight":"Varies",
+        "Cost per Round":"x2",
+        "Ammo Type":"12 gauge"
+    },
+    {
+        "Name":"Explosive",
+        "Type":"Guns",
+        "Effect":"Each creature and object within 5 feet of the target takes 3d6 explosive damage. The target falls prone unless their Strength ability score is greater than 10.",
+        "Weight":"Varies",
+        "Cost per Round":"x6",
+        "Ammo Type":".308, .50"
+    },
+    {
+        "Name":"Flechette",
+        "Type":"Guns",
+        "Effect":"The weapon\u2019s damage total is reduced by 1 but ignores up to 6 points of DT.",
+        "Weight":"Varies",
+        "Cost per Round":"x2",
+        "Ammo Type":"12 gauge"
+    },
+    {
+        "Name":"FMJ, piercing",
+        "Type":"Guns",
+        "Effect":"The weapon\u2019s damage is increased by 2. If this damage brings a creature to 0 HP, the attack also targets the next creature behind them in a line.",
+        "Weight":"Varies",
+        "Cost per Round":"x3",
+        "Ammo Type":".308, .357, 5mm, 9mm, 10mm, 12.7mm"
+    },
+    {
+        "Name":"Hollow Point",
+        "Type":"Guns",
+        "Effect":"If the weapon deals damage to a target creature's hit points, it deals extra damage equal to its critical hit damage. If the damage is subtracted by the target\u2019s DT, the damage gains no critical hit bonus and is halved.",
+        "Weight":"Varies",
+        "Cost per Round":"x4",
+        "Ammo Type":".308, .357, .44, .45-70, 5mm, 5.56mm, 9mm, 10mm, 12.7mm"
+    },
+    {
+        "Name":"JFP",
+        "Type":"Guns",
+        "Effect":"The weapon gains Destructive.",
+        "Weight":"Varies",
+        "Cost per Round":"x3",
+        "Ammo Type":".357"
+    },
+    {
+        "Name":"JSP",
+        "Type":"Guns",
+        "Effect":"The weapon gains Breakable and its damage is increased by 3.",
+        "Weight":"Varies",
+        "Cost per Round":"x2",
+        "Ammo Type":".308, 5mm"
+    },
+    {
+        "Name":"Incendiary",
+        "Type":"Guns",
+        "Effect":"The weapon gains Incendiary.",
+        "Weight":"Varies",
+        "Cost per Round":"x4",
+        "Ammo Type":".50, Missile"
+    },
+    {
+        "Name":"Match",
+        "Type":"Guns",
+        "Effect":"The weapon\u2019s damage is increased by 5, the short range modifier is reduced by 2.",
+        "Weight":"Varies",
+        "Cost per Round":"x2",
+        "Ammo Type":".50, 5.56mm"
+    },
+    {
+        "Name":"Magnum",
+        "Type":"Guns",
+        "Effect":"The weapon\u2019s damage is increased by 3, ignores 3 points of DT, and its range modifiers are each increased by 2. However, after every second attack; the weapon gains a level of decay.",
+        "Weight":"Varies",
+        "Cost per Round":"x3",
+        "Ammo Type":"12 gauge, 20 gauge"
+    },
+    {
+        "Name":"Rubber",
+        "Type":"Guns",
+        "Effect":"The weapon\u2019s damage is instead 1d4+2 and you do not add your agility modifier, if this damage dealt to a target creature\u2019s hit points, they take one level of fatigue. Additionally, if a rubber bullet brings a creature to 0 hit points, they automatically heal 1 point unless the attack was a targeted attack to the head or eyes.",
+        "Weight":"Varies",
+        "Cost per Round":"-50%",
+        "Ammo Type":"9mm, 10mm, 5mm"
+    },
+    {
+        "Name":"Slug",
+        "Type":"Guns",
+        "Effect":"The weapon\u2019s range modifiers are each tripled and it gains the Accurate and Destructive properties. However, it loses its Spread and Powerful properties.",
+        "Weight":"Varies",
+        "Cost per Round":"x4",
+        "Ammo Type":"12 gauge, 20 gauge"
+    },
+    {
+        "Name":"Pulse Slug",
+        "Type":"Guns",
+        "Effect":"The weapon gains the same effects as the Slug ammunition type. Additionally, when dealing damage to a Robot or a creature in Power Armor; the damage is doubled.",
+        "Weight":"Varies",
+        "Cost per Round":"x6",
+        "Ammo Type":"12 gauge, 20 gauge"
+    },
+    {
+        "Name":"Bulk",
+        "Type":"Energy",
+        "Effect":"The weapon\u2019s damage is reduced by 3. The weapon gains Durable.",
+        "Weight":"Varies",
+        "Cost per Round":"-50%",
+        "Ammo Type":"Energy Cell, Microfusion Cell"
+    },
+    {
+        "Name":"Optimized",
+        "Type":"Energy",
+        "Effect":"The weapon\u2019s damage is increased by 1 and ignores 1 point of DT.",
+        "Weight":"Varies",
+        "Cost per Round":"x2",
+        "Ammo Type":"Energy Cell, Microfusion Cell"
+    },
+    {
+        "Name":"Overcharged",
+        "Type":"Energy",
+        "Effect":"The weapon\u2019s damage is increased by 2 and ignores 2 points of DT. The weapon gains Breakable.",
+        "Weight":"Varies",
+        "Cost per Round":"x3",
+        "Ammo Type":"Energy Cell, Microfusion Cell"
+    },
+    {
+        "Name":"Max Charge",
+        "Type":"Energy",
+        "Effect":"The weapon\u2019s damage is increased by 4 and ignores 4 points of DT. The weapon gains Breakable and after every third attack; the weapon gains a level of decay.",
+        "Weight":"Varies",
+        "Cost per Round":"x5",
+        "Ammo Type":"Energy Cell, Microfusion Cell"
+    },
+    {
+        "Name":"Stimpak Loader",
+        "Type":"Syringer",
+        "Effect":"This syringe allows you to load it with a stimpak, the target gains the effects of the stimpak.",
+        "Weight":"Varies",
+        "Cost per Round":"25c",
+        "Ammo Type":"Syringer"
+    },
+    {
+        "Name":"Chem Loader",
+        "Type":"Syringer",
+        "Effect":"This syringe allows you to load it with a chem, the target gains the effects of the chem.",
+        "Weight":"Varies",
+        "Cost per Round":"25c",
+        "Ammo Type":"Syringer"
+    },
+    {
+        "Name":"Radscorpion Venom",
+        "Type":"Syringer",
+        "Effect":"Target becomes poisoned for 3 turns and takes 1d6 poison damage at the start of each of their turns.",
+        "Weight":"Varies",
+        "Cost per Round":"35c",
+        "Ammo Type":"Syringer"
+    },
+    {
+        "Name":"Endangerol",
+        "Type":"Syringer",
+        "Effect":"Target\u2019s DT is reduced by 3 for 1 minute.",
+        "Weight":"Varies",
+        "Cost per Round":"40c",
+        "Ammo Type":"Syringer"
+    },
+    {
+        "Name":"Yellow Belly",
+        "Type":"Syringer",
+        "Effect":"Target becomes frightened for 3 rounds.",
+        "Weight":"Varies",
+        "Cost per Round":"50c",
+        "Ammo Type":"Syringer"
+    },
+    {
+        "Name":"Berserk",
+        "Type":"Syringer",
+        "Effect":"Target spends all of its AP on its next turn to attack the nearest creature to it.",
+        "Weight":"Varies",
+        "Cost per Round":"55c",
+        "Ammo Type":"Syringer"
+    },
+    {
+        "Name":"Hemorrhage",
+        "Type":"Syringer",
+        "Effect":"Target gains one level of Bleeding.",
+        "Weight":"Varies",
+        "Cost per Round":"75c",
+        "Ammo Type":"Syringer"
+    },
+    {
+        "Name":"Lock Joint",
+        "Type":"Syringer",
+        "Effect":"Target becomes slowed for 2 turns.",
+        "Weight":"Varies",
+        "Cost per Round":"85c",
+        "Ammo Type":"Syringer"
+    },
+    {
+        "Name":"Sclerosis",
+        "Type":"Syringer",
+        "Effect":"Target becomes Deafened for 3 rounds.",
+        "Weight":"Varies",
+        "Cost per Round":"110c",
+        "Ammo Type":"Syringer"
+    },
+    {
+        "Name":"Myopic Serum",
+        "Type":"Syringer",
+        "Effect":"Target becomes Blinded for 3 rounds.",
+        "Weight":"Varies",
+        "Cost per Round":"160c",
+        "Ammo Type":"Syringer"
+    },
+    {
+        "Name":"Mind Cloud",
+        "Type":"Syringer",
+        "Effect":"All creatures beyond 30 feet of the target creature become invisible to them for 1 minute.",
+        "Weight":"Varies",
+        "Cost per Round":"175c",
+        "Ammo Type":"Syringer"
+    },
+    {
+        "Name":"Tranquilizer",
+        "Type":"Syringer",
+        "Effect":"If the target\u2019s endurance is a 4 or below, they fall unconscious for 1 hour. Otherwise, they become Dazed for their next two turns and fall unconscious for 1 hour at the end of their third turn. Creature\u2019s dazed in this way can remove this condition and prevent falling unconscious by using any chem with the stimulant property.",
+        "Weight":"Varies",
+        "Cost per Round":"500c",
+        "Ammo Type":"Syringer"
+    }
+]

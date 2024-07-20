@@ -1,0 +1,114 @@
+{
+    "backgrounds": [
+        {
+            "Background": "Background",
+            "Tagged_skills": "Tagged skills",
+            "Traits": "Traits "
+        },
+        {
+            "Background": "Custom Background",
+            "Tagged_skills": "None",
+            "Traits": "None"
+        },
+        {
+            "Background": "Cultist",
+            "Tagged_skills": "Melee Weapons, Speech, and Sneak.",
+            "Traits": "The Sight Beyond"
+        },
+        {
+            "Background": "Doctor",
+            "Tagged_skills": "Breach, Medicine, and Science.",
+            "Traits": "Do No Harm"
+        },
+        {
+            "Background": "Drifter",
+            "Tagged_skills": "Breach, Sneak, and Unarmed.",
+            "Traits": "Street Rat"
+        },
+        {
+            "Background": "Entertainer",
+            "Tagged_skills": "Barter, Speech, and Intimidation.",
+            "Traits": "A Moment of Respite"
+        },
+        {
+            "Background": "Farmer",
+            "Tagged_skills": "Crafting, Intimidation, and Survival.",
+            "Traits": "Hardened by the Earth"
+        },
+        {
+            "Background": "Guard",
+            "Tagged_skills": "Guns, Speech, and Melee Weapons",
+            "Traits": "Vigilant Watch"
+        },
+        {
+            "Background": "Hermit",
+            "Tagged_skills": "Explosives, Medicine, and Survival",
+            "Traits": "Recluse"
+        },
+        {
+            "Background": "Journalist",
+            "Tagged_skills": "Breach, Speech, and Sneak",
+            "Traits": "Persistent"
+        },
+        {
+            "Background": "Laborer",
+            "Tagged_skills": "Crafting, Speech, and Melee Weapons.",
+            "Traits": "Long Days, Long Nights"
+        },
+        {
+            "Background": "Mechanic",
+            "Tagged_skills": "Crafting, Guns, and Science.",
+            "Traits": "Proper Maintenance"
+        },
+        {
+            "Background": "Mercenary",
+            "Tagged_skills": "Melee Weapons, and Survival.",
+            "Traits": "Sweeten the Deal"
+        },
+        {
+            "Background": "Pastor",
+            "Tagged_skills": "Barter, Intimidation, and Speech.",
+            "Traits": "Embolden"
+        },
+        {
+            "Background": "Pilgrim",
+            "Tagged_skills": "Energy Weapons, Sneak, and Survival.",
+            "Traits": "Long Roads"
+        },
+        {
+            "Background": "Pit Fighter",
+            "Tagged_skills": "Barter, Melee, and Unarmed.",
+            "Traits": "Endure the Battle"
+        },
+        {
+            "Background": "Scientist",
+            "Tagged_skills": "Energy Weapons, Breach, and Science.",
+            "Traits": "Field Research"
+        },
+        {
+            "Background": "Scribe",
+            "Tagged_skills": "Crafting, Energy Weapons, and Medicine.",
+            "Traits": "Wasteland Knowledge"
+        },
+        {
+            "Background": "Soldier",
+            "Tagged_skills": "Explosives, Guns, and Medicine.",
+            "Traits": "Efficient Combatant"
+        },
+        {
+            "Background": "Trader",
+            "Tagged_skills": "Barter, Speech, and Intimidation.",
+            "Traits": "Bargaining Chip"
+        },
+        {
+            "Background": "Vault Dweller",
+            "Tagged_skills": "Medicine, Speech, and Science.",
+            "Traits": "Talented"
+        },
+        {
+            "Background": "Wastelander",
+            "Tagged_skills": "Guns, Survival, and Unarmed.",
+            "Traits": "Adventurers Instinct"
+        }
+    ]
+}

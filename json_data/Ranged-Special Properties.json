@@ -1,0 +1,157 @@
+[
+    {
+        "Property Name":"Accurate",
+        "Property Tag":"Accurate",
+        "Description":"When you make a targeted attack roll with a weapon that has this property, you may choose the limb condition instead of rolling for it."
+    },
+    {
+        "Property Name":"Arc",
+        "Property Tag":"Arc",
+        "Description":"When you deal damage to a creature with a weapon that has this property, the energy leaps to another nearby creature. Each creature within 20 feet of the previously damaged creature takes the same damage. The energy leaps so long as there is a new target within 20 feet of the previous one."
+    },
+    {
+        "Property Name":"Area of Effect",
+        "Property Tag":"Area of Effect",
+        "Description":"When you attack with a weapon that has this property, you do not make an attack roll. Instead you use the required ammo and any creatures or objects in range take the weapon\u2019s damage when the attack hits. You do not add your Agility modifier to this damage."
+    },
+    {
+        "Property Name":"Automatic",
+        "Property Tag":"Automatic",
+        "Description":"When you spend AP to attack with a weapon that has this property, you can make a number of additional attacks without spending any additional AP, the target of these additional attacks must be within 10 feet of the previous target and you do not add your agility modifier to the damage of the additional attacks. The number of additional attacks you can make is listed in the special properties column."
+    },
+    {
+        "Property Name":"Automatic (Switch)",
+        "Property Tag":"Automatic (Switch)",
+        "Description":"A weapon with this property has two modes of fire, single shot and automatic. You can spend 3 AP to switch between the two modes. If you attack with the weapon while it is switched into its single shot mode of fire; the weapon functions normally and has the special properties listed under Single shot. If you attack with the weapon while it is switched into its automatic mode of fire; the weapon functions as if it has the automatic property (see Automatic above) and has the special properties listed under Automatic."
+    },
+    {
+        "Property Name":"Breakable",
+        "Property Tag":"Breakable",
+        "Description":"The weapon gains a level of decay when you roll a 3 or lower on an attack roll."
+    },
+    {
+        "Property Name":"Charge",
+        "Property Tag":"Charge",
+        "Description":"When you spend action points to make an attack roll with a weapon that has this property, you can spend 3 additional AP to add one additional damage dice to the damage. Alternatively, you can spend 6 additional AP to add two additional damage dice. Whenever you charge a weapon, you add your modifier twice to the damage total instead of once."
+    },
+    {
+        "Property Name":"Corrosive",
+        "Property Tag":"Corrosive",
+        "Description":"When you deal damage to a creature with a weapon that has this property, they gain Corroded."
+    },
+    {
+        "Property Name":"Debilitating",
+        "Property Tag":"Debilitating",
+        "Description":"When you deal damage to a creature's hit points from a targeted attack with a weapon that has this property, you roll twice on the conditions table and apply both conditions. If you roll the same condition twice, the effects stack."
+    },
+    {
+        "Property Name":"Defensive",
+        "Property Tag":"Defensive",
+        "Description":"If you block while holding this weapon, your DT increases by 2."
+    },
+    {
+        "Property Name":"Destructive",
+        "Property Tag":"Destructive",
+        "Description":"When you roll a 1 on the damage dice with a ranged weapon that has this property, it is a 2 instead."
+    },
+    {
+        "Property Name":"Durable",
+        "Property Tag":"Durable",
+        "Description":"A ranged weapon with this property does not gain levels of decay when you roll a 1 on the attack roll."
+    },
+    {
+        "Property Name":"Electromagnetic",
+        "Property Tag":"Electromagnetic",
+        "Description":"When a robot, synth, or creature made of inorganic material takes damage from a weapon with this property, the damage is doubled for them."
+    },
+    {
+        "Property Name":"Energy Weapon",
+        "Property Tag":"Energy Weapon",
+        "Description":"When you attack with a weapon that has this property, you add your Energy weapons skill bonus to the d20 roll instead of any other skill bonus. Additionally, when you deal damage from an attack with a weapon that has this property, you add a bonus equal to your Perception ability modifier instead of any other ability modifier."
+    },
+    {
+        "Property Name":"Fragile",
+        "Property Tag":"Fragile",
+        "Description":"When this weapon gains a level of decay, it breaks and ceases function."
+    },
+    {
+        "Property Name":"Freezing",
+        "Property Tag":"Freezing",
+        "Description":"When a creature takes damage from a weapon with this property, they gain the Slowed condition until the end of their next turn."
+    },
+    {
+        "Property Name":"Incendiary",
+        "Property Tag":"Incendiary",
+        "Description":"When you deal damage to a target creature\u2019s hit points with a weapon that has this property, they gain the Burning condition. If an attack with a ranged weapon with this property misses, the projectile may land nearby and alight any flammable objects (up to GM\u2019s discretion). Additionally, any flammable objects hit by a weapon with this property immediately burst into flames."
+    },
+    {
+        "Property Name":"Kickback",
+        "Property Tag":"Kickback",
+        "Description":"If you hold a ranged weapon that has this property with one hand, both the short and long range are halved."
+    },
+    {
+        "Property Name":"Mangle",
+        "Property Tag":"Mangle",
+        "Description":"When you deal damage to a target creature\u2019s hit points with a weapon that has this property, they gain the Bleeding condition."
+    },
+    {
+        "Property Name":"Manual Reload",
+        "Property Tag":"Manual Reload",
+        "Description":"When you reload a weapon with this property, you must spend 1 AP to load one round into the weapon instead of spending 6 AP."
+    },
+    {
+        "Property Name":"Powerful",
+        "Property Tag":"Powerful",
+        "Description":"When you deal damage to a creature within 5 feet of you with a weapon that has this property, you deal extra damage equal to the crit damage."
+    },
+    {
+        "Property Name":"Quick Reload",
+        "Property Tag":"Quick Reload",
+        "Description":"Reloading a weapon with this property costs 4 AP instead of 6."
+    },
+    {
+        "Property Name":"Radioactive",
+        "Property Tag":"Radioactive",
+        "Description":"When you deal damage to a target creature\u2019s hit points with a weapon that has this property, they must succeed a radiation check or take 1 level of rads."
+    },
+    {
+        "Property Name":"Semi-Automatic",
+        "Property Tag":"Semi-Automatic",
+        "Description":"If you spend AP to attack with this weapon directly after spending AP to attack with it on the same turn, you can make another attack without spending any AP. (Example: If you spend 4 AP to attack with a Laser Pistol on your turn, then you immediately spend 4 AP to attack again with the Laser Pistol, you can attack again without spending any AP.)"
+    },
+    {
+        "Property Name":"Slow",
+        "Property Tag":"Slow",
+        "Description":"When you attack with this weapon, you do not hit your target until the start of your next turn. If your target is no longer in range, you miss your attack and deal no damage."
+    },
+    {
+        "Property Name":"Slow Reload",
+        "Property Tag":"Slow Reload",
+        "Description":"Reloading a weapon with this property costs 10 AP instead of 6. If you and another creature are within 5 feet of the weapon, you can instead spend 5 AP to reload the weapon so long as they spend 5 AP on their previous turn to help you. If your maximum AP is 9 or lower and you reload a weapon with this property and another creature is not helping you; you must spend all your AP, then you must spend any leftover AP on your next turn to reload the weapon."
+    },
+    {
+        "Property Name":"Spread",
+        "Property Tag":"Spread",
+        "Description":"When you attack a target in the second range increment of a weapon that has this property, you also target each creature and object within 5 feet of the target."
+    },
+    {
+        "Property Name":"Sturdy",
+        "Property Tag":"Sturdy",
+        "Description":"A ranged weapon with this property ignores the negative effects of the first 2 levels of decay."
+    },
+    {
+        "Property Name":"Two Handed",
+        "Property Tag":"Two Handed",
+        "Description":"If you attack with a ranged weapon that has this property with only one hand, you must spend an additional 2 AP. Otherwise you have disadvantage on the attack roll and after you attack you fall prone. Alternatively, if your Strength ability score is greater than Strength requirement by at least 3, you can wield a ranged weapon with the two handed property with one hand without having disadvantage on the attack roll or falling prone."
+    },
+    {
+        "Property Name":"Unstable",
+        "Property Tag":"Unstable",
+        "Description":"A weapon with this property gains a level of decay every five times you reload it instead of ten."
+    },
+    {
+        "Property Name":"Unwieldy",
+        "Property Tag":"Unwieldy",
+        "Description":"If you attack with a ranged weapon that has this property with only one hand; you have disadvantage on the attack roll."
+    }
+]

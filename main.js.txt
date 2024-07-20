@@ -1,0 +1,23 @@
+document.addEventListener('DOMContentLoaded', function() {
+    function fetchData(url, callback) {
+        fetch(url)
+            .then(function(response) { return response.json(); })
+            .then(function(data) { callback(data); })
+            .catch(function(error) { console.error('Error:', error); });
+    }
+
+    function populateDropdown(id, data) {
+        var dropdown = document.getElementById(id);
+        data.forEach(function(item) {
+            var option = document.createElement('option');
+            option.value = item.name;
+            option.textContent = item.name;
+            dropdown.appendChild(option);
+        });
+    }
+
+    // Only fetching backgrounds.json as a test
+    fetchData('../json_data/backgrounds.json', function(data) {
+        populateDropdown('background', data);
+    });
+});

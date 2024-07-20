@@ -1,0 +1,202 @@
+[
+    {
+        "Name":".308",
+        "Type":"Guns",
+        "Caliber":".308",
+        "Weight":"Varies",
+        "Cost per Round":"10c",
+        "Special Properties":"Standard"
+    },
+    {
+        "Name":".50",
+        "Type":"Guns",
+        "Caliber":".50",
+        "Weight":"Varies",
+        "Cost per Round":"20c",
+        "Special Properties":"Standard"
+    },
+    {
+        "Name":".357 Magnum",
+        "Type":"Guns",
+        "Caliber":".357 Magnum",
+        "Weight":"Varies",
+        "Cost per Round":"5c",
+        "Special Properties":"Standard"
+    },
+    {
+        "Name":".44 Magnum",
+        "Type":"Guns",
+        "Caliber":".44 Magnum",
+        "Weight":"Varies",
+        "Cost per Round":"8c",
+        "Special Properties":"Standard"
+    },
+    {
+        "Name":".45",
+        "Type":"Guns",
+        "Caliber":".45",
+        "Weight":"Varies",
+        "Cost per Round":"2c",
+        "Special Properties":"Standard"
+    },
+    {
+        "Name":".45-70 Gov't.",
+        "Type":"Guns",
+        "Caliber":".45-70 Gov't.",
+        "Weight":"Varies",
+        "Cost per Round":"12c",
+        "Special Properties":"Standard"
+    },
+    {
+        "Name":"10mm",
+        "Type":"Guns",
+        "Caliber":"10mm",
+        "Weight":"Varies",
+        "Cost per Round":"4c",
+        "Special Properties":"Standard"
+    },
+    {
+        "Name":"12 gauge",
+        "Type":"Guns",
+        "Caliber":"12 gauge",
+        "Weight":"Varies",
+        "Cost per Round":"5c",
+        "Special Properties":"Standard"
+    },
+    {
+        "Name":"12.7mm",
+        "Type":"Guns",
+        "Caliber":"12.7mm",
+        "Weight":"Varies",
+        "Cost per Round":"12c",
+        "Special Properties":"Standard"
+    },
+    {
+        "Name":"20 gauge",
+        "Type":"Guns",
+        "Caliber":"20 gauge",
+        "Weight":"Varies",
+        "Cost per Round":"2c",
+        "Special Properties":"Standard"
+    },
+    {
+        "Name":"5.56mm",
+        "Type":"Guns",
+        "Caliber":"5.56mm",
+        "Weight":"Varies",
+        "Cost per Round":"2c",
+        "Special Properties":"Standard"
+    },
+    {
+        "Name":"5mm",
+        "Type":"Guns",
+        "Caliber":"5mm",
+        "Weight":"Varies",
+        "Cost per Round":"5c",
+        "Special Properties":"Standard"
+    },
+    {
+        "Name":"9mm",
+        "Type":"Guns",
+        "Caliber":"9mm",
+        "Weight":"Varies",
+        "Cost per Round":"2c",
+        "Special Properties":"Standard"
+    },
+    {
+        "Name":"Flares",
+        "Type":"Guns",
+        "Caliber":null,
+        "Weight":"Varies",
+        "Cost per Round":"5c",
+        "Special Properties":"Standard"
+    },
+    {
+        "Name":"Nails (Pack of 5)",
+        "Type":"Guns",
+        "Caliber":null,
+        "Weight":"Varies",
+        "Cost per Round":"5c",
+        "Special Properties":"Pack of 5"
+    },
+    {
+        "Name":"Railway Spike",
+        "Type":"Guns",
+        "Caliber":null,
+        "Weight":"Varies",
+        "Cost per Round":"5c",
+        "Special Properties":"Standard"
+    },
+    {
+        "Name":"Cryo Cell",
+        "Type":"Energy",
+        "Caliber":null,
+        "Weight":"Varies",
+        "Cost per Round":"50c",
+        "Special Properties":"Standard"
+    },
+    {
+        "Name":"Energy Cell",
+        "Type":"Energy",
+        "Caliber":null,
+        "Weight":"Varies",
+        "Cost per Round":"30c",
+        "Special Properties":"Standard"
+    },
+    {
+        "Name":"Microfusion Cell",
+        "Type":"Energy",
+        "Caliber":null,
+        "Weight":"Varies",
+        "Cost per Round":"35c",
+        "Special Properties":"Standard"
+    },
+    {
+        "Name":"Fusion Core",
+        "Type":"Energy",
+        "Caliber":null,
+        "Weight":"Varies",
+        "Cost per Round":"200c",
+        "Special Properties":"Standard"
+    },
+    {
+        "Name":"2mm EC",
+        "Type":"Energy",
+        "Caliber":null,
+        "Weight":"Varies",
+        "Cost per Round":"40c",
+        "Special Properties":"Standard"
+    },
+    {
+        "Name":"Gamma cell",
+        "Type":"Energy",
+        "Caliber":null,
+        "Weight":"Varies",
+        "Cost per Round":"60c",
+        "Special Properties":"Standard"
+    },
+    {
+        "Name":"Fuel",
+        "Type":"Heavy",
+        "Caliber":null,
+        "Weight":"Varies",
+        "Cost per Round":"50c",
+        "Special Properties":"Individual Load: 20."
+    },
+    {
+        "Name":"Mini Nuke",
+        "Type":"Heavy",
+        "Caliber":null,
+        "Weight":"Varies",
+        "Cost per Round":"250c",
+        "Special Properties":"Individual Load: 12."
+    },
+    {
+        "Name":"Missile",
+        "Type":"Heavy",
+        "Caliber":null,
+        "Weight":"Varies",
+        "Cost per Round":"50c",
+        "Special Properties":"Individual Load: 10."
+    }
+]

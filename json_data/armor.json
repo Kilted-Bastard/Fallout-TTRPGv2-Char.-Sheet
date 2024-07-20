@@ -1,0 +1,159 @@
+{
+    "instructions": {
+        "add_custom_armor_type": "To add a custom armor type, follow the template provided below and fill in the necessary details. Each armor type should include 'Armor Type', 'AC', 'DT', 'Upgrade Slots', 'Load', and 'STR Requirement'.",
+        "add_custom_upgrade": "To add a custom upgrade, define the upgrade's name, description, and effects. Include details about which armor types it can be applied to and any restrictions."
+    },
+    "templates": {
+        "custom_armor_type": {
+            "Armor Type": "Type (Tag)",
+            "AC": "AC (Tag)",
+            "DT": "DT (Tag)",
+            "Upgrade Slots": "Upgrade Slots (Tag)",
+            "Load": "Load (Tag)",
+            "STR Requirement": "STR Requirement (Tag)"
+        },
+        "custom_upgrade": {
+            "Upgrade Name": "Name of the upgrade",
+            "Description": "Detailed description of the upgrade",
+            "Rank 1 Effect": "Effect of the upgrade at rank 1",
+            "Rank 2 Effect": "Effect of the upgrade at rank 2",
+            "Rank 3 Effect": "Effect of the upgrade at rank 3",
+            "Rank 1 Stat Modifier": "Stat Modifier for rank 1",
+            "Rank 2 Stat Modifier": "Stat Modifier for rank 2",
+            "Rank 3 Stat Modifier": "Stat Modifier for rank 3"
+        }
+    },
+    "armor_types": [
+        {
+            "Armor Type": "Cloth",
+            "AC": 10,
+            "DT": 0,
+            "Upgrade Slots": 8,
+            "Load": 5,
+            "STR Requirement": 1
+        },
+        {
+            "Armor Type": "Leather",
+            "AC": 11,
+            "DT": 1,
+            "Upgrade Slots": 6,
+            "Load": 15,
+            "STR Requirement": 1
+        },
+        {
+            "Armor Type": "Metal",
+            "AC": 12,
+            "DT": 0,
+            "Upgrade Slots": 4,
+            "Load": 20,
+            "STR Requirement": 5
+        },
+        {
+            "Armor Type": "Multilayered",
+            "AC": 10,
+            "DT": 2,
+            "Upgrade Slots": 5,
+            "Load": 40,
+            "STR Requirement": 3
+        },
+        {
+            "Armor Type": "Ballistic Weave",
+            "AC": 12,
+            "DT": 3,
+            "Upgrade Slots": 6,
+            "Load": 30,
+            "STR Requirement": 3
+        },
+        {
+            "Armor Type": "Steel",
+            "AC": 13,
+            "DT": 2,
+            "Upgrade Slots": 4,
+            "Load": 35,
+            "STR Requirement": 6
+        }
+    ],
+    "armor_upgrades": [
+        {
+            "Upgrade Name": "Camouflage",
+            "Rank 1 Effect": "You gain advantage on sneak checks relying on sight.",
+            "Rank 2 Effect": "While in dim light, you become shadowed. Your movement speed is increased by 10 feet.",
+            "Rank 3 Effect": "While in dim light, you become shadowed. Your movement speed is increased by 20 feet.",
+            "Rank 1 Stat Modifier": "Null",
+            "Rank 2 Stat Modifier": "Null",
+            "Rank 3 Stat Modifier": "Null"
+        },
+        {
+            "Upgrade Name": "Light",
+            "Rank 1 Effect": "Load reduced by 5. Strength req. reduced by 1.",
+            "Rank 2 Effect": "If you spend at least 4 AP on your turn to move, your AC increases by 1.",
+            "Rank 3 Effect": "If you spend at least 4 AP on your turn to move, your AC increases by 2.",
+            "Rank 1 Stat Modifier": "Null",
+            "Rank 2 Stat Modifier": "Null",
+            "Rank 3 Stat Modifier": "Null"
+        },
+        {
+            "Upgrade Name": "Fitted",
+            "Rank 1 Effect": "When you take damage from an area of effect, you take half damage if you succeed on the saving throw.",
+            "Rank 2 Effect": "You have advantage on combat sequence rolls.",
+            "Rank 3 Effect": "You have advantage on combat sequence rolls. AC increases by 1.",
+            "Rank 1 Stat Modifier": "Null",
+            "Rank 2 Stat Modifier": "Null",
+            "Rank 3 Stat Modifier": "Null"
+        },
+        {
+            "Upgrade Name": "Lead Lined",
+            "Rank 1 Effect": "Radiation DC decreases by 2.",
+            "Rank 2 Effect": "Radiation DC decreases by 4.",
+            "Rank 3 Effect": "Radiation DC decreases by 6.",
+            "Rank 1 Stat Modifier": "Radiation DC decreases by 2",
+            "Rank 2 Stat Modifier": "Radiation DC decreases by 4",
+            "Rank 3 Stat Modifier": "Radiation DC decreases by 6"
+        },
+        {
+            "Upgrade Name": "Strengthened",
+            "Rank 1 Effect": "When you take damage from a critical hit, you take half damage if you succeed on the saving throw.",
+            "Rank 2 Effect": "If you would gain a severe injury, you instead gain a minor injury.",
+            "Rank 3 Effect": "If you would gain a severe injury, you instead gain a minor injury. DT increases by 1.",
+            "Rank 1 Stat Modifier": "Null",
+            "Rank 2 Stat Modifier": "Null",
+            "Rank 3 Stat Modifier": "Null"
+        },
+        {
+            "Upgrade Name": "Sturdy",
+            "Rank 1 Effect": "You ignore the negative effects of the first injury you receive.",
+            "Rank 2 Effect": "You ignore the negative effects of the first two injuries you receive.",
+            "Rank 3 Effect": "You ignore the negative effects of the first three injuries you receive.",
+            "Rank 1 Stat Modifier": "Null",
+            "Rank 2 Stat Modifier": "Null",
+            "Rank 3 Stat Modifier": "Null"
+        },
+        {
+            "Upgrade Name": "Pocketed",
+            "Rank 1 Effect": "Your carry load is increased by 10.",
+            "Rank 2 Effect": "Your carry load is increased by 15.",
+            "Rank 3 Effect": "Your carry load is increased by 25.",
+            "Rank 1 Stat Modifier": "Max Load:+10",
+            "Rank 2 Stat Modifier": "Max Load:+15",
+            "Rank 3 Stat Modifier": "Max Load:+25"
+        },
+        {
+            "Upgrade Name": "Reinforced",
+            "Rank 1 Effect": "DT increases by 1.",
+            "Rank 2 Effect": "DT increases by 2.",
+            "Rank 3 Effect": "DT increases by 3.",
+            "Rank 1 Stat Modifier": "DT: +1",
+            "Rank 2 Stat Modifier": "DT: +2",
+            "Rank 3 Stat Modifier": "DT: +3"
+        },
+        {
+            "Upgrade Name": "Hardened",
+            "Rank 1 Effect": "AC increases by 1.",
+            "Rank 2 Effect": "AC increases by 2.",
+            "Rank 3 Effect": "AC increases by 3.",
+            "Rank 1 Stat Modifier": "AC: +1",
+            "Rank 2 Stat Modifier": "AC: +2",
+            "Rank 3 Stat Modifier": "AC: +3"
+        }
+    ]
+}
